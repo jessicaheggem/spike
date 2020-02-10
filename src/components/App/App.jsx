@@ -13,7 +13,7 @@ import teal from '@material-ui/core/colors/teal'
 // import Select from '@material-ui/core/Select'
 // import InputLabel from '@material-ui/core/InputLabel'
 // import FormHelperText from '@material-ui/core/FormHelperText'
-// import asyncValidate from '../asyncValidate/asyncValidate'
+import asyncValidate from '../asyncValidate/asyncValidate'
 
 const theme = createMuiTheme({
   palette: {
@@ -22,63 +22,114 @@ const theme = createMuiTheme({
   }
 })
 
+
 class App extends Component {
 
   render() {
     return (
-      <ThemeProvider theme={theme}>
-        <div className="App">
-          <h1>Registration</h1>
-          <TextField placeholder="First Name" />
-          <br />
-          <TextField placeholder="Last Name" />
-          <br />
-          <TextField placeholder="Username" />
-          <br />
-          {/* the password textfield hides the password from showing as it's typed */}
-          <TextField
-            id="standard-password-input"
-            label="Password"
-            // className={classes.textField}
-            type="password"
-            autoComplete="current-password"
-            margin="normal"
-            placeholder="Password" />
-          <br />
-          <TextField placeholder="City" />
-          <br />
-          <TextField placeholder="State" />
-          <br />
-          <TextField placeholder="Job Title/Occupation" />
-          <p>Github URL or another link to your portfolio</p>
-          <TextField
-            placeholder="Link"
-          />
-          <p>How much time can you commit to a project?</p>
-          <TextField
-            multiline
-            rows="4"
-            placeholder="Enter time here"
-          />
-          <p>List your known programming languages</p>
-          <TextField
-            multiline
-            rows="4"
-            placeholder="List programming languages here"
-          />
-          <p>What qualifications do you have? Include degrees, certifications, courses, etc.</p>
-          <TextField
-            multiline
-            rows="4"
-            placeholder="List qualifications here"
-          />
-          <br />
-          <br />
-          <br />
-          <Button variant="contained" color="primary">Register!</Button>
-          <br />
-        </div>
-      </ThemeProvider>
+      
+      <form autoComplete="on">
+        <ThemeProvider theme={theme}>
+          <div className="App">
+            <h1>Registration</h1>
+            <TextField
+              required
+              id="standard-required"
+              label="First Name"
+              margin="normal"
+            />
+            <br />
+            <TextField
+              required
+              id="standard-name"
+              label="Last Name"
+              margin="normal"
+            />
+            <br />
+            <TextField
+              required
+              id="standard-name"
+              label="Username"
+              margin="normal"
+            />
+            <br />
+            {/* the password textfield hides the password from showing as it's typed */}
+            <TextField
+              required
+              id="standard-password-input"
+              label="Password"
+              // className={classes.textField}
+              type="password"
+              autoComplete="current-password"
+              margin="normal"
+              placeholder="Password" />
+            <br />
+            <TextField
+              required
+              id="standard-name"
+              label="City"
+              margin="normal"
+            />
+            <br />
+            <TextField
+              required
+              id="standard-name"
+              label="State"
+              margin="normal"
+            />
+            <br />
+            <TextField
+              required
+              id="standard-name"
+              label="Job Title/Occupation"
+              margin="normal"
+              // variant="outlined"
+            />
+            <p>Github URL or another link to your portfolio</p>
+            <TextField
+              required
+              placeholder="Link"
+              margin="normal"
+              variant="outlined"
+            />
+            <p>How much time can you commit to a project?</p>
+            <TextField
+              required
+              multiline
+              rows="4"
+              placeholder="Enter time here"
+              margin="normal"
+              variant="outlined"
+            />
+            <p>List your known programming languages</p>
+            <TextField
+              required
+              multiline
+              rows="4"
+              placeholder="List programming languages here"
+              margin="normal"
+              variant="outlined"
+            />
+            <p>What qualifications do you have? Include degrees, certifications, courses, etc.</p>
+            <TextField
+              multiline
+              rows="4"
+              placeholder="List qualifications here"
+              margin="normal"
+              variant="outlined"
+            />
+            <br />
+            <br />
+            <br />
+            <Button
+              variant="contained"
+              color="primary"
+            >Register!
+            </Button>
+            <br />
+          </div>
+        </ThemeProvider>
+      </form>
 
     );
   }
