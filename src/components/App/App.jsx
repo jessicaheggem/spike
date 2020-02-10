@@ -13,7 +13,7 @@ import teal from '@material-ui/core/colors/teal'
 // import Select from '@material-ui/core/Select'
 // import InputLabel from '@material-ui/core/InputLabel'
 // import FormHelperText from '@material-ui/core/FormHelperText'
-import asyncValidate from '../asyncValidate/asyncValidate'
+// import asyncValidate from '../asyncValidate/asyncValidate'
 
 const theme = createMuiTheme({
   palette: {
@@ -22,12 +22,9 @@ const theme = createMuiTheme({
   }
 })
 
-
 class App extends Component {
-
   render() {
     return (
-      
       <form autoComplete="on">
         <ThemeProvider theme={theme}>
           <div className="App">
@@ -62,7 +59,10 @@ class App extends Component {
               type="password"
               autoComplete="current-password"
               margin="normal"
-              placeholder="Password" />
+              placeholder="Password" 
+              helperText="Minimum of 6 characters"
+              
+              />
             <br />
             <TextField
               required
@@ -91,6 +91,7 @@ class App extends Component {
               placeholder="Link"
               margin="normal"
               variant="outlined"
+              helperText="yourname.github.io OR yourportfolio.com"
             />
             <p>How much time can you commit to a project?</p>
             <TextField
@@ -100,6 +101,7 @@ class App extends Component {
               placeholder="Enter time here"
               margin="normal"
               variant="outlined"
+              helperText="i.e. 5 hours per week"
             />
             <p>List your known programming languages</p>
             <TextField
@@ -120,7 +122,6 @@ class App extends Component {
             />
             <br />
             <br />
-            <br />
             <Button
               variant="contained"
               color="primary"
@@ -134,6 +135,5 @@ class App extends Component {
     );
   }
 }
-
 
 export default App;
